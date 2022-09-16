@@ -4,13 +4,16 @@ import "./controllers"
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './redux/configureStore';
+import App from './App';
 
-function App() {
-console.log("hello")
-  return (<h1>Hello World!</h1>);
-}
 
 ReactDOM.render(
-  <App/>,
+  <Provider store={store}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </Provider>,
   document.getElementById('root'),
 );
